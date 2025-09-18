@@ -5380,14 +5380,14 @@ function loadImage(area, no, preserveView = false) {
         if (shopMaxPriceEl) shopMaxPriceEl.textContent = '💧 ' + (SHOP_PRICE_MAX * qty) + ' Droplets';
         try {
           const nameEl = document.getElementById('shop-max-name');
-          if (nameEl) nameEl.textContent = '+'+5*qty + ' Max. Charges';
+          if (nameEl) nameEl.textContent = t('shop.maxTitle').replace('+5', '+' + (5*qty));
         } catch {}
       } else {
         const qty = parseQty(shopRecQtyEl);
         if (shopRecPriceEl) shopRecPriceEl.textContent = '💧 ' + (SHOP_PRICE_REC * qty) + ' Droplets';
         try {
           const nameEl = document.getElementById('shop-rec-name');
-          if (nameEl) nameEl.textContent = '+'+30*qty+ ' Paint Charges';
+          if (nameEl) nameEl.textContent = t('shop.recTitle').replace('+30', '+' + (30*qty));
         } catch {}
       }
       try { updateShopButtonsDisabled(); } catch {}
